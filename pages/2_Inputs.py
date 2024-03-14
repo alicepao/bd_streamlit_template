@@ -21,7 +21,15 @@ elif slider_input == "Number Input":
 
 
 # -------- Create a radio select input that toogles between slider and number inputs ----------------------
+slider_input = st.radio(
+    "Select Slider or Number Input",
+    ["Slider", "Number Input"])
 
+flips = 0
+if slider_input == "Slider":
+    flips = st.slider("Number of tosses", 0, 100, 3)
+elif slider_input == "Number Input":
+    flips = st.number_input("Number of tosses")
 
 # ----------- Add a slider and a number input that can change variable 'flips' -------------------------
 flips = 0
